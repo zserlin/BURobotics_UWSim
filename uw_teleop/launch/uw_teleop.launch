@@ -1,0 +1,6 @@
+<launch>
+  <param name="joy_node/dev" type="String" value="/dev/input/js0"/>
+  <node name="joy_node" pkg="joy" type="joy_node"/>
+  <node name="uw_teleop" pkg="uw_teleop" type="uw_teleop"/>
+  <node name="uw_teleop_joint" pkg="uw_teleop" type="uw_teleop_joint"/>
+</launch>

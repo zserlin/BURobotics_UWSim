@@ -1,0 +1,47 @@
+<robot
+  name="BlueFox">
+  <link
+    name="base_link">
+<!--
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="9.0974" />
+
+      <inertia
+        ixx="0.176704844490717"
+        ixy="-0.000620721173117359"
+        ixz="-0.00124373521195898"
+        iyy="0.134950397848302"
+        iyz="-0.0140439258059837"
+        izz="0.211214492933458" />
+
+    </inertial>
+-->
+    <visual>
+      <origin
+        xyz="-0.15824 0.12541 0.11281"
+        rpy="-1.5707963267949 0 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="data/scenes/BlueROV2_URDF2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.93333 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.15824 0.12541 0.11281"
+        rpy="-1.5707963267949 0 -1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="data/scenes/BlueROV2_URDF2.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

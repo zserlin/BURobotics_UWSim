@@ -1,0 +1,6 @@
+<package>
+  <description brief="NEXXUS_ROV">NEXXUS_ROV</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

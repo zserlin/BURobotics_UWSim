@@ -1,0 +1,997 @@
+<robot
+  name="NEXXUS_ROV">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.262709455567221 -5.04773964465497E-07 1.02570651954968"
+        rpy="0 0 0" />
+      <mass
+        value="7776.50474086467" />
+      <inertia
+        ixx="4231.13385829054"
+        ixy="0.0047232152277562"
+        ixz="-742.663431383737"
+        iyy="7142.45025894633"
+        iyz="-0.00389873656121347"
+        izz="6697.75166716633" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.4 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_base">
+    <inertial>
+      <origin
+        xyz="0.00260949410478023 0.11518471484141 0.0247991809043286"
+        rpy="0 0 0" />
+      <mass
+        value="19.0189998303744" />
+      <inertia
+        ixx="0.222664069607445"
+        ixy="-0.00235113363132507"
+        ixz="0.00513672693804964"
+        iyy="0.286736103218344"
+        iyz="-0.022343677808528"
+        izz="0.270940058196441" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/left_base.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/left_base.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_rotate"
+    type="continuous">
+    <origin
+      xyz="1.275 -0.4734 0.0649865462707279"
+      rpy="1.5707963267949 -6.09663102959371E-17 -1.66369210067807" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_base" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="long_arm_left">
+    <inertial>
+      <origin
+        xyz="0.33739769780229 -0.157805695395218 -0.0489810700604256"
+        rpy="0 0 0" />
+      <mass
+        value="52.2813182714766" />
+      <inertia
+        ixx="0.713765644083779"
+        ixy="0.821228894497289"
+        ixz="0.188536088622393"
+        iyy="2.08770695821813"
+        iyz="-0.0906707643584196"
+        izz="2.33442297090977" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/long_arm_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/long_arm_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_base_to_long_arm"
+    type="continuous">
+    <origin
+      xyz="0 0.179999999999918 -0.0999999999999996"
+      rpy="1.57079632679495 1.32739343868679 1.57079632679494" />
+    <parent
+      link="left_base" />
+    <child
+      link="long_arm_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="short_arm_left">
+    <inertial>
+      <origin
+        xyz="0.0338336820567053 -0.367040047301337 -0.114839739763827"
+        rpy="0 0 0" />
+      <mass
+        value="40.9351653764014" />
+      <inertia
+        ixx="0.4195375142133"
+        ixy="0.421639968661216"
+        ixz="0.0936519800846322"
+        iyy="1.07937068439831"
+        iyz="-0.0440177813078167"
+        izz="1.21869528435275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/short_arm_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/short_arm_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="long_to_short_left"
+    type="continuous">
+    <origin
+      xyz="0.75 0 0"
+      rpy="-7.91727794435815E-15 -2.35922392732846E-15 0.461007109071797" />
+    <parent
+      link="long_arm_left" />
+    <child
+      link="short_arm_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wrist_left">
+    <inertial>
+      <origin
+        xyz="0.0496552746731349 -0.57407696959737 -0.14699157912577"
+        rpy="0 0 0" />
+      <mass
+        value="8.20017451118234" />
+      <inertia
+        ixx="0.0335322965385651"
+        ixy="0.0091793758617911"
+        ixz="0.00282376070782661"
+        iyy="0.0453995638535324"
+        iyz="-0.00120553410568539"
+        izz="0.0588369735083493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/wrist_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/wrist_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="short_to_wrist_left"
+    type="continuous">
+    <origin
+      xyz="0.550000000000001 0 0"
+      rpy="-3.92741394961149E-15 5.99520433297585E-15 -0.527476633142044" />
+    <parent
+      link="short_arm_left" />
+    <child
+      link="wrist_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="inner_rotate_left">
+    <inertial>
+      <origin
+        xyz="0.132655539282078 -0.168232710594212 0.679137957432961"
+        rpy="0 0 0" />
+      <mass
+        value="16.2407852839406" />
+      <inertia
+        ixx="0.0797434670346253"
+        ixy="0.0110815022519629"
+        ixz="-0.0410012168760335"
+        iyy="0.160178006478"
+        iyz="0.00605540086248151"
+        izz="0.137073938139638" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/inner_rotate_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/inner_rotate_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_to_rotate_left"
+    type="continuous">
+    <origin
+      xyz="0.150000000000006 0 0"
+      rpy="1.57079632679491 0.226109970721939 1.2015665514638E-14" />
+    <parent
+      link="wrist_left" />
+    <child
+      link="inner_rotate_left" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="outer_rotate_left">
+    <inertial>
+      <origin
+        xyz="0.1156972365172 -0.0419986101247292 -0.809785984872501"
+        rpy="0 0 0" />
+      <mass
+        value="11.2805787403328" />
+      <inertia
+        ixx="0.0608453568790884"
+        ixy="0.00593885582500977"
+        ixz="0.0102680909365605"
+        iyy="0.0849773051863189"
+        iyz="0.00987511273619083"
+        izz="0.073862642862036" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/outer_rotate_left.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/outer_rotate_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_rotate"
+    type="continuous">
+    <origin
+      xyz="0.223188373208235 0 0"
+      rpy="-2.84481878982754 2.07472927726826E-15 2.96984659087229E-15" />
+    <parent
+      link="inner_rotate_left" />
+    <child
+      link="outer_rotate_left" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="top_left_finger">
+    <inertial>
+      <origin
+        xyz="0.0472326783466523 -0.820208593338189 -0.0244786041269447"
+        rpy="0 0 0" />
+      <mass
+        value="0.978062941719721" />
+      <inertia
+        ixx="0.00804241419725183"
+        ixy="0.000400501030188751"
+        ixz="-0.000211713484269775"
+        iyy="0.00797978274622249"
+        iyz="0.000580702792475758"
+        izz="0.00108070597619313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/top_left_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/top_left_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_hand_left"
+    type="continuous">
+    <origin
+      xyz="0.226811626791766 0 0"
+      rpy="1.57079632679489 -2.55351295663786E-15 -0.993898067875357" />
+    <parent
+      link="outer_rotate_left" />
+    <child
+      link="top_left_finger" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="middle_left_finger">
+    <inertial>
+      <origin
+        xyz="-0.039133116079173 0.898919011464281 -0.0435587895172858"
+        rpy="0 0 0" />
+      <mass
+        value="0.978062941719721" />
+      <inertia
+        ixx="0.00773414381852181"
+        ixy="-0.00011945566740027"
+        ixz="0.00120560628731072"
+        iyy="0.00704457444050988"
+        iyz="0.002532765946202"
+        izz="0.0023241846606358" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/middle_left_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/middle_left_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_hand_left"
+    type="continuous">
+    <origin
+      xyz="0.226811626791766 0 0.0100000000000006"
+      rpy="-1.57079632679513 -1.91346938294146E-13 1.49832192319527" />
+    <parent
+      link="outer_rotate_left" />
+    <child
+      link="middle_left_finger" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="bottom_left_finger">
+    <inertial>
+      <origin
+        xyz="-0.0101355487362644 -0.875898075406619 -0.0272296236312384"
+        rpy="0 0 0" />
+      <mass
+        value="0.978062941719721" />
+      <inertia
+        ixx="0.00804241419725184"
+        ixy="0.000400501030188751"
+        ixz="-0.000211713484269777"
+        iyy="0.0079797827462225"
+        iyz="0.000580702792475756"
+        izz="0.00108070597619312" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/bottom_left_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/bottom_left_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bottom_hand_left"
+    type="continuous">
+    <origin
+      xyz="0.226811626791766 0 0"
+      rpy="1.57079632679489 -2.55351295663786E-15 -0.993898067875357" />
+    <parent
+      link="outer_rotate_left" />
+    <child
+      link="bottom_left_finger" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_base">
+    <inertial>
+      <origin
+        xyz="-0.0119666622978197 0.115184714841411 0.0218771073604018"
+        rpy="0 0 0" />
+      <mass
+        value="19.0189998303743" />
+      <inertia
+        ixx="0.233490344135739"
+        ixy="0.0107817610060457"
+        ixz="-0.0207804439091989"
+        iyy="0.286736103218344"
+        iyz="-0.0197109461206755"
+        izz="0.260113783668146" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/right_base.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/right_base.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_rotate"
+    type="continuous">
+    <origin
+      xyz="1.25510935864429 0.490629462635042 0.0649865462707279"
+      rpy="1.5707963267949 -5.00868675662025E-17 -0.957938710870401" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_base" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="long_arm_right">
+    <inertial>
+      <origin
+        xyz="0.311147745422217 -0.0602712035256139 0.227634064835145"
+        rpy="0 0 0" />
+      <mass
+        value="52.2813182714765" />
+      <inertia
+        ixx="0.841936888932591"
+        ixy="0.321821682770023"
+        ixz="-0.845531497846748"
+        iyy="2.40777703510776"
+        iyz="0.162735398461549"
+        izz="1.88618164917132" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/long_arm_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/long_arm_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="long_arm_to_base_right"
+    type="continuous">
+    <origin
+      xyz="0 0.17999999999991 -0.100000000000041"
+      rpy="1.57079632679491 1.30944664371548 1.5707963267949" />
+    <parent
+      link="right_base" />
+    <child
+      link="long_arm_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="short_arm_right">
+    <inertial>
+      <origin
+        xyz="0.201648636335224 -0.149206549884397 0.534466961905572"
+        rpy="0 0 0" />
+      <mass
+        value="40.9351653764014" />
+      <inertia
+        ixx="0.436326575261009"
+        ixy="-0.0616570761517308"
+        ixz="-0.426131676786642"
+        iyy="1.27983114785044"
+        iyz="-0.0247606572409536"
+        izz="1.0014457598529" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/short_arm_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/short_arm_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="long_to_short_right"
+    type="continuous">
+    <origin
+      xyz="0.750000000000003 0 0"
+      rpy="3.77475828372553E-15 -3.99680288865056E-15 -0.541318161345949" />
+    <parent
+      link="long_arm_right" />
+    <child
+      link="short_arm_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wrist_right">
+    <inertial>
+      <origin
+        xyz="-0.0459903696618884 -0.147901860148826 0.683045016039765"
+        rpy="0 0 0" />
+      <mass
+        value="8.20017451118233" />
+      <inertia
+        ixx="0.0341343651414279"
+        ixy="0.00156724424725078"
+        ixz="-0.0120282840666404"
+        iyy="0.0507148434431008"
+        iyz="-0.00118148221255804"
+        izz="0.052919625315918" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/wrist_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/wrist_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="short_to_wrist_right"
+    type="continuous">
+    <origin
+      xyz="0.550000000000004 0 0"
+      rpy="8.28503932126523E-14 2.44249065417534E-14 -0.158139746696562" />
+    <parent
+      link="short_arm_right" />
+    <child
+      link="wrist_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="inner_rotate_wrist_right">
+    <inertial>
+      <origin
+        xyz="0.0702829214198144 0.802175479127275 0.162652186588738"
+        rpy="0 0 0" />
+      <mass
+        value="16.2407851434059" />
+      <inertia
+        ixx="0.0918926632199818"
+        ixy="-0.0488390091699264"
+        ixz="-0.00792450641917049"
+        iyy="0.127416245315149"
+        iyz="-0.0048023883350022"
+        izz="0.157686497310133" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/inner_rotate_wrist_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/inner_rotate_wrist_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="inner_wrist_right"
+    type="continuous">
+    <origin
+      xyz="0.149999999999559 0 0"
+      rpy="1.57079632679506 -0.0995884947787087 -6.21612993652564E-14" />
+    <parent
+      link="wrist_right" />
+    <child
+      link="inner_rotate_wrist_right" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="outer_wrist_right">
+    <inertial>
+      <origin
+        xyz="-0.120584694932182 0.247890120180038 0.921080412850596"
+        rpy="0 0 0" />
+      <mass
+        value="11.2805785048736" />
+      <inertia
+        ixx="0.0612625554965686"
+        ixy="-0.00684022701588718"
+        ixz="-0.00686508994661612"
+        iyy="0.0926570679008006"
+        iyz="-0.0014269741704632"
+        izz="0.0657664393297489" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/outer_wrist_right.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/outer_wrist_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_rotate"
+    type="continuous">
+    <origin
+      xyz="0.382055923377307 0 0"
+      rpy="-1.11372981203631 -1.26287869051112E-15 1.96509475358653E-14" />
+    <parent
+      link="inner_rotate_wrist_right" />
+    <child
+      link="outer_wrist_right" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="top_right_finger">
+    <inertial>
+      <origin
+        xyz="0.266381313580853 -0.981716220220802 -0.0407465663325235"
+        rpy="0 0 0" />
+      <mass
+        value="0.97806294171972" />
+      <inertia
+        ixx="0.00763565158339067"
+        ixy="-0.000204913799543186"
+        ixz="-0.000329179606004761"
+        iyy="0.0061754392728724"
+        iyz="-0.00339368629122391"
+        izz="0.00329181206340436" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/top_right_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/top_right_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_top"
+    type="continuous">
+    <origin
+      xyz="0.0500000000000003 0 0"
+      rpy="-1.57079632679488 -3.33066907387547E-16 1.7510840789752" />
+    <parent
+      link="outer_wrist_right" />
+    <child
+      link="top_right_finger" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="middle_right_finger">
+    <inertial>
+      <origin
+        xyz="-0.288133846416162 1.01204752772213 -0.106894551646816"
+        rpy="0 0 0" />
+      <mass
+        value="0.978062941719721" />
+      <inertia
+        ixx="0.0076123277378857"
+        ixy="0.000241278454089101"
+        ixz="-0.000618462101577316"
+        iyy="0.0063898102778648"
+        iyz="0.00326625088803583"
+        izz="0.00310076490391695" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/middle_right_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/middle_right_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_middle"
+    type="continuous">
+    <origin
+      xyz="0.0500000000000003 0 0"
+      rpy="1.57079632679489 2.05391259555654E-14 -1.07778180269517" />
+    <parent
+      link="outer_wrist_right" />
+    <child
+      link="middle_right_finger" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bottom_right_finger">
+    <inertial>
+      <origin
+        xyz="0.265257292508527 -1.04839493318502 0.0034426383906121"
+        rpy="0 0 0" />
+      <mass
+        value="0.97806294171972" />
+      <inertia
+        ixx="0.00763565158339067"
+        ixy="-0.00020491379954319"
+        ixz="-0.000329179606004763"
+        iyy="0.00617543927287241"
+        iyz="-0.00339368629122391"
+        izz="0.00329181206340435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/bottom_right_finger.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://NEXXUS_ROV/meshes/bottom_right_finger.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_bottom"
+    type="continuous">
+    <origin
+      xyz="0.0500000000000003 0 0"
+      rpy="-1.57079632679488 -3.33066907387547E-16 1.7510840789752" />
+    <parent
+      link="outer_wrist_right" />
+    <child
+      link="bottom_right_finger" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>

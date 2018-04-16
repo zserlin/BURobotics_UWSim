@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="tf" type="tf_remap" name="tf_remapper" output="screen">
+    <rosparam param="mappings">
+      [{old: /world, new: /map}]
+    </rosparam>
+  </node>
+</launch>

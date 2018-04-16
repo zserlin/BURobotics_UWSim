@@ -1,0 +1,835 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE UWSimScene SYSTEM "UWSimScene.dtd" >
+
+<UWSimScene>
+    <oceanState>
+    <windx> 0.04 </windx>
+    <windy> 0.04 </windy>
+    <windSpeed> 12 </windSpeed>
+    <depth> 100 </depth>
+    <reflectionDamping> 0.6 </reflectionDamping>
+    <waveScale> 1e-7 </waveScale>
+    <isNotChoppy> 0 </isNotChoppy>
+    <choppyFactor> 10 </choppyFactor>
+    <crestFoamHeight> 2 </crestFoamHeight>
+    <oceanSurfaceHeight> 3 </oceanSurfaceHeight>
+    <fog>
+      <density> 0.001</density>
+      <color>
+	<r>0.1</r>
+	<g>0.1</g>
+	<b>0.1</b>
+      </color>
+    </fog>
+    <color>
+      <r>.3</r>
+      <g>.3</g>
+      <b>.3</b>
+    </color>
+    <attenuation>
+      <r>0.001</r>
+      <g>0.001 </g>
+      <b> 0.001 </b>
+    </attenuation>
+  </oceanState>
+  <simParams>
+    <disableShaders> 0 </disableShaders>
+    <resw> 800 </resw>
+    <resh> 600 </resh>
+    <offsetp>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </offsetp>
+    <offsetr>
+      <x> 3.14</x>
+      <y> 0</y>
+      <z> -1.57 </z>
+    </offsetr>
+    <enablePhysics> 1 </enablePhysics>
+  </simParams>
+  <camera>
+    <freeMotion> 1 </freeMotion>
+    <objectToTrack>BlueFox/base_link</objectToTrack>
+    <fov> 80 </fov>
+    <aspectRatio> 1.33 </aspectRatio>
+    <near> 0.1 </near>
+    <far> 10000 </far>
+    <position>
+      <x>-5</x>
+      <y>-5 </y>
+      <z>8 </z>
+    </position>
+    <lookAt>
+      <x>0</x>
+      <y>0 </y>
+      <z>0 </z>
+    </lookAt>
+  </camera>
+
+  <vehicle>
+    <name>lidar</name>
+    <file>data/scenes/lidar.urdf</file>
+    <position>
+      <x> 0</x>
+      <y> 5 </y>
+      <z> 93 </z>
+    </position>
+    <orientation>
+      <r>0</r>
+      <p>0</p>
+      <y>1.57</y>
+    </orientation>
+
+    <multibeamSensor underwaterParticles="false">
+      <name>lidar_multibeam</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.57</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+  </vehicle>
+
+  <vehicle>
+    <name>BlueFox1</name>
+    <file>data/scenes/BlueFox.urdf</file>
+    <position>
+      <x> 0</x>
+      <y> 5 </y>
+      <z> 93 </z>
+    </position>
+    <orientation>
+      <r>0</r>
+      <p>0</p>
+      <y>1.57</y>
+    </orientation>
+
+    <virtualCamera>
+      <name>bowtech1</name>
+      <relativeTo>base_link</relativeTo>
+      <resw> 400 </resw>
+      <resh> 300 </resh>
+      <position>
+        <x>.2</x>
+        <y> 0</y>
+        <z> .1</z>
+      </position>
+      <orientation>
+        <r>-1.57</r>
+        <p>0</p>
+        <y>1.57</y>
+      </orientation>
+    </virtualCamera>
+
+    <structuredLightProjector>
+        <name>projector1</name>
+        <relativeTo>base_link</relativeTo>
+        <fov>55</fov>
+        <image_name>data/scenes/spot.jpg</image_name>
+        <laser>0</laser>
+        <position>
+          <x>.3</x>
+          <y>0</y>
+          <z>.1</z>
+        </position>
+        <orientation>
+          <r>3.14</r>
+          <p>1.65</p>
+          <y>0</y>
+        </orientation>
+    </structuredLightProjector>
+
+
+    <imu>
+      <name>imu</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </position>
+      <orientation>
+        <r>0</r>
+        <p>0</p>
+        <y>0</y>
+      </orientation>
+      <std>0.001</std>
+  </imu>
+
+    <multibeamSensor>
+      <name>multibeam11</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.57</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+<!-- upward 5 -->
+
+    <multibeamSensor>
+      <name>multibeam12</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.727</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam13</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.884</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam14</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>2.041</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam15</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>2.198</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam16</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>2.355</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <!-- downward 5 -->
+    <multibeamSensor>
+      <name>multibeam17</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.413</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam18</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.256</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam19</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>1.099</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam20</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>0.942</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+    <multibeamSensor>
+      <name>multibeam21</name>
+      <relativeTo>base_link</relativeTo>
+      <position>
+        <x>.2</x>
+        <y>0</y>
+        <z>.1</z>
+      </position>
+      <orientation>
+        <r>3.14</r>
+        <p>0.785</p>
+        <y>0</y>
+      </orientation>
+      <initAngle>-30</initAngle>
+      <finalAngle>30</finalAngle>
+      <angleIncr>1</angleIncr>
+      <range>50</range>
+    </multibeamSensor>
+
+<!--
+      <rangeSensor>
+        <name>sonar</name>
+        <relativeTo>base_link</relativeTo>
+        <range>10</range>
+        <visible>0</visible>
+        <position>
+          <x>.2</x>
+          <y>0</y>
+          <z>.1</z>
+        </position>
+        <orientation>
+          <r>-1.57</r>
+          <p>0</p>
+          <y>1.57</y>
+        </orientation>
+      </rangeSensor>
+
+      <pressureSensor>
+        <name>pressureSensor1</name>
+        <relativeTo>base_link</relativeTo>
+        <position>
+          <x>0</x>
+          <y>0</y>
+          <z>0.2</z>
+        </position>
+        <orientation>
+          <r>0</r>
+          <p>0</p>
+          <y>0</y>
+        </orientation>
+        <std>0.02</std>
+      </pressureSensor>
+
+      <virtualRangeImage>
+        <name>rangeImage1</name>
+        <relativeTo>base_link</relativeTo>
+        <resw> 320</resw>
+        <resh> 240 </resh>
+        <position>
+          <x>0.2</x>
+          <y> 0 </y>
+          <z> .1 </z>
+        </position>
+        <orientation>
+          <r>-1.57</r>
+          <p>0</p>
+          <y>1.57 </y>
+        </orientation>
+        <parameters>
+          <fx>257.986</fx>
+          <fy>257.341</fy>
+          <x0>120</x0>
+          <y0>160</y0>
+          <f>10</f>
+          <n>0.8</n>
+          <k>0</k>
+        </parameters>
+      </virtualRangeImage>
+-->
+
+
+  </vehicle>
+  <vehicle>
+    <name>BlueFox2</name>
+    <file>data/scenes/BlueFox.urdf</file>
+    <position>
+      <x> 0</x>
+      <y> 0 </y>
+      <z> 90 </z>
+    </position>
+    <orientation>
+      <r>0</r>
+      <p>0</p>
+      <y>3.14 </y>
+    </orientation>
+
+    <virtualCamera>
+      <name>bowtech2</name>
+      <relativeTo>base_link</relativeTo>
+      <resw> 400 </resw>
+      <resh> 300 </resh>
+      <position>
+        <x>.2</x>
+        <y> 0</y>
+        <z> .1</z>
+      </position>
+      <orientation>
+        <r>-1.57</r>
+        <p>0</p>
+        <y>1.57</y>
+      </orientation>
+    </virtualCamera>
+
+    <structuredLightProjector>
+        <name>projector2</name>
+        <relativeTo>base_link</relativeTo>
+        <fov>55</fov>
+        <image_name>data/scenes/spot.jpg</image_name>
+        <laser>0</laser>
+        <position>
+          <x>.3</x>
+          <y>0</y>
+          <z>.1</z>
+        </position>
+        <orientation>
+          <r>3.14</r>
+          <p>1.65</p>
+          <y>0</y>
+        </orientation>
+    </structuredLightProjector>
+<!--
+      <rangeSensor>
+        <name>sonar2</name>
+        <relativeTo>base_link</relativeTo>
+        <range>10</range>
+        <visible>0</visible>
+        <position>
+          <x>.2</x>
+          <y>0</y>
+          <z>.1</z>
+        </position>
+        <orientation>
+          <r>-1.57</r>
+          <p>0</p>
+          <y>1.57</y>
+        </orientation>
+      </rangeSensor>
+
+      <pressureSensor>
+        <name>pressureSensor2</name>
+        <relativeTo>base_link</relativeTo>
+        <position>
+          <x>0</x>
+          <y>0</y>
+          <z>0.2</z>
+        </position>
+        <orientation>
+          <r>0</r>
+          <p>0</p>
+          <y>0</y>
+        </orientation>
+        <std>0.02</std>
+      </pressureSensor>
+
+      <virtualRangeImage>
+        <name>rangeImage2</name>
+        <relativeTo>base_link</relativeTo>
+        <resw> 320</resw>
+        <resh> 240 </resh>
+        <position>
+          <x>0.2</x>
+          <y> 0 </y>
+          <z> .1 </z>
+        </position>
+        <orientation>
+          <r>-1.57</r>
+          <p>0</p>
+          <y>1.57 </y>
+        </orientation>
+        <parameters>
+          <fx>257.986</fx>
+          <fy>257.341</fy>
+          <x0>120</x0>
+          <y0>160</y0>
+          <f>10</f>
+          <n>0.8</n>
+          <k>0</k>
+        </parameters>
+      </virtualRangeImage>
+-->
+      <multibeamSensor>
+        <name>multibeam2</name>
+        <relativeTo>base_link</relativeTo>
+        <position>
+          <x>.2</x>
+          <y>0</y>
+          <z>.1</z>
+        </position>
+        <orientation>
+          <r>3.14</r>
+          <p>1.57</p>
+          <y>0</y>
+        </orientation>
+        <initAngle>-30</initAngle>
+        <finalAngle>30</finalAngle>
+        <angleIncr>0.1</angleIncr>
+        <range>30</range>
+      </multibeamSensor>
+
+  </vehicle>
+
+
+  <object>
+    <name> terrain </name>
+    <file> terrain/desert/desert2.3ds  </file>
+    <position>
+      <x> 0</x>
+      <y> 0 </y>
+      <z> 99 </z>
+    </position>
+    <orientation>
+      <r>0.0</r>
+      <p>1.57 </p>
+      <y>0 </y>
+    </orientation>
+    <physics>
+      <mass> 0 </mass>
+      <collisionShapeType> compoundtrimesh </collisionShapeType>
+    </physics>
+  </object>
+
+   <object>
+    <name>valve</name>
+    <file> /home/burobotics/catkin_ws/src/underwater_simulation/uwsim/data/scenes/manifold_final.wrl </file>
+    <position>
+      <x> 5</x>
+      <y> 3 </y>
+      <z> 98 </z>
+    </position>
+    <orientation>
+      <r>1.57</r>
+      <p>0 </p>
+      <y>0</y>
+    </orientation>
+    <physics>
+      <mass> 10000000000 </mass>
+      <inertia>
+        <x> 100000000000</x>
+        <y> 100000000000 </y>
+        <z> 100000000000 </z>
+      </inertia>
+      <collisionShapeType> compoundbox </collisionShapeType>
+    </physics>
+  </object>
+
+  <object>
+   <name>valve</name>
+   <file> /home/burobotics/catkin_ws/src/underwater_simulation/uwsim/data/scenes/manifold_final.wrl </file>
+   <position>
+     <x> 12</x>
+     <y> -12 </y>
+     <z> 97 </z>
+   </position>
+   <orientation>
+     <r>1.57</r>
+     <p>0 </p>
+     <y>-.5</y>
+   </orientation>
+   <physics>
+     <mass> 100000000000 </mass>
+     <inertia>
+       <x> 1000000000000</x>
+       <y> 1000000000000 </y>
+       <z> 1000000000000 </z>
+     </inertia>
+     <collisionShapeType> compoundbox </collisionShapeType>
+   </physics>
+ </object>
+
+ <object>
+  <name>valve</name>
+  <file> /home/burobotics/catkin_ws/src/underwater_simulation/uwsim/data/scenes/subsea_tree_final.wrl </file>
+  <position>
+    <x> -5</x>
+    <y> -5 </y>
+    <z> 98 </z>
+  </position>
+  <orientation>
+    <r>1.57</r>
+    <p>0 </p>
+    <y>1.57</y>
+  </orientation>
+  <physics>
+    <mass> 100000 </mass>
+    <inertia>
+      <x> 1000000000</x>
+      <y> 1000000000 </y>
+      <z> 1000000 </z>
+    </inertia>
+    <collisionShapeType> compoundcylinder </collisionShapeType>
+  </physics>
+</object>
+
+  <rosInterfaces>
+    <ROSOdomToPAT>
+      <topic> /dataNavigator1 </topic>
+      <vehicleName> BlueFox1 </vehicleName>
+    </ROSOdomToPAT>
+    <ROSOdomToPAT>
+      <topic> /dataNavigatorlidar </topic>
+      <vehicleName> lidar </vehicleName>
+    </ROSOdomToPAT>
+    <ROSOdomToPAT>
+      <topic> /dataNavigator2 </topic>
+      <vehicleName> BlueFox2 </vehicleName>
+    </ROSOdomToPAT>
+    <PATToROSOdom>
+      <topic> /uwsim/lidarOdom </topic>
+      <vehicleName> lidar </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /uwsim/BlueFox1Odom </topic>
+      <vehicleName> BlueFox1 </vehicleName>
+    </PATToROSOdom>
+    <PATToROSOdom>
+      <topic> /uwsim/BlueFox2Odom </topic>
+      <vehicleName> BlueFox2 </vehicleName>
+    </PATToROSOdom>
+    <WorldToROSTF>
+      <rootName> world </rootName>
+      <enableObjects> 1 </enableObjects>
+      <rate>10</rate>
+    </WorldToROSTF>
+    <VirtualCameraToROSImage>
+      <cameraName>bowtech1</cameraName>
+      <imageTopic> /BlueFox1/camera1 </imageTopic>
+      <infoTopic> /BlueFox1/camera1_info </infoTopic>
+    </VirtualCameraToROSImage>
+    <VirtualCameraToROSImage>
+      <cameraName>bowtech2</cameraName>
+      <imageTopic> /BlueFox2/camera1 </imageTopic>
+      <infoTopic> /BlueFox2/camera1_info </infoTopic>
+    </VirtualCameraToROSImage>
+    <ROSTwistToPAT>
+      <topic> /lidar/velocityCommand </topic>
+      <vehicleName> lidar </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /BlueFox1/velocityCommand </topic>
+      <vehicleName> BlueFox1 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSTwistToPAT>
+      <topic> /BlueFox2/velocityCommand </topic>
+      <vehicleName> BlueFox2 </vehicleName>
+    </ROSTwistToPAT>
+    <ROSPoseToPAT>
+      <topic> /BlueFox1/pose</topic>
+      <vehicleName> BlueFox1 </vehicleName>
+    </ROSPoseToPAT>
+    <ROSPoseToPAT>
+      <topic> /lidar/pose</topic>
+      <vehicleName> lidar </vehicleName>
+    </ROSPoseToPAT>
+    <ROSPoseToPAT>
+      <topic> /BlueFox2/pose</topic>
+      <vehicleName> BlueFox2 </vehicleName>
+    </ROSPoseToPAT>
+
+    <ImuToROSImu>
+      <name>imu</name>
+      <topic>BlueFox1/imu</topic>
+      <rate>20</rate>
+    </ImuToROSImu>
+
+    <multibeamSensorToLaserScan>
+      <name>lidar_multibeam</name>
+      <topic>lidar/multibeam</topic>
+    </multibeamSensorToLaserScan>
+
+    <multibeamSensorToLaserScan>
+      <name>multibeam11</name>
+      <topic>BlueFox1/multibeam1</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam12</name>
+      <topic>BlueFox1/multibeam2</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam13</name>
+      <topic>BlueFox1/multibeam3</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam14</name>
+      <topic>BlueFox1/multibeam4</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam15</name>
+      <topic>BlueFox1/multibeam5</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam16</name>
+      <topic>BlueFox1/multibeam6</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam17</name>
+      <topic>BlueFox1/multibeam7</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam18</name>
+      <topic>BlueFox1/multibeam8</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam19</name>
+      <topic>BlueFox1/multibeam9</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam20</name>
+      <topic>BlueFox1/multibeam10</topic>
+    </multibeamSensorToLaserScan>
+    <multibeamSensorToLaserScan>
+      <name>multibeam21</name>
+      <topic>BlueFox1/multibeam11</topic>
+    </multibeamSensorToLaserScan>
+
+
+
+
+    <multibeamSensorToLaserScan>
+      <name>multibeam2</name>
+      <topic>BlueFox2/multibeam</topic>
+    </multibeamSensorToLaserScan>
+  </rosInterfaces>
+  <!--  <RangeSensorToROSRange>
+      <name>sonar1</name>
+      <topic> /uwsim/BlueFox1/range </topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+
+    <RangeSensorToROSRange>
+      <name>sonar2</name>
+      <topic> /uwsim/BlueFox2/range </topic>
+      <rate>10</rate>
+    </RangeSensorToROSRange>
+-->
+
+<!--
+    <PressureSensorToROS>
+      <name>pressureSensor1</name>
+      <topic>BlueFox1/pressure</topic>
+      <rate>5</rate>
+    </PressureSensorToROS>
+
+    <PressureSensorToROS>
+      <name>pressureSensor2</name>
+      <topic>BlueFox2/pressure</topic>
+      <rate>5</rate>
+    </PressureSensorToROS>
+
+    <RangeImageSensorToROSImage>
+      <cameraName>rangeImage1</cameraName>
+      <imageTopic> /uwsim/rangecamera1 </imageTopic>
+      <infoTopic> /uwsim/rangecamera1_info </infoTopic>
+    </RangeImageSensorToROSImage>
+
+    <RangeImageSensorToROSImage>
+      <cameraName>rangeImage2</cameraName>
+      <imageTopic> /uwsim/rangecamera2 </imageTopic>
+      <infoTopic> /uwsim/rangecamera2_info </infoTopic>
+    </RangeImageSensorToROSImage>
+-->
+
+</UWSimScene>

@@ -1,0 +1,25 @@
+import rospy
+from sensor_msgs.msg import Joy
+from nav_msgs.msg import Odometry
+
+class UWTeleop(object):
+
+    def __init__(self):
+        rospy.init_node("uw_teleop")
+
+        vel_pub = rospy.Publisher('/dataNavigator', Odometry, queue_size=10)
+        rate = rospy.Rate(20)
+
+        joy_sub = rospy.Subscriber("/joy", Joy, self.joy_msg_callback)
+        
+    def joy_msg_callback(self, data):
+        self.joy_data = data
+
+
+    def start_teleop(self):
+        while not rospy.is_shutdown():
+            print(self.joy_data.axes)
+        
+if __name__ == "__main__":
+    uw_teleop = UWTeleop()
+    uw_teleop.start_teleop()

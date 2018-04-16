@@ -1,0 +1,748 @@
+<robot
+  name="NEXXUS_ROV">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.262709455567221 -5.04773964465497E-07 1.02570651954968"
+        rpy="0 0 0" />
+      <mass
+        value="7776" />
+      <inertia
+        ixx="4231.13385829054"
+        ixy="0.0047232152277562"
+        ixz="-742.663431383737"
+        iyy="7142.45025894633"
+        iyz="-0.00389873656121347"
+        izz="6697.75166716633" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.4 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+      <mesh
+        filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left1"
+    type="continuous">
+    <origin
+      xyz="1.275 -0.4734 0.064987"
+      rpy="-1.5708 -6.123E-17 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left2"
+    type="continuous">
+    <origin
+      xyz="0 -0.18 0.1"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="left1" />
+    <child
+      link="left2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left3"
+    type="continuous">
+    <origin
+      xyz="0.75 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left2" />
+    <child
+      link="left3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left4">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left4"
+    type="continuous">
+    <origin
+      xyz="0.55 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left3" />
+    <child
+      link="left4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left5">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left5"
+    type="continuous">
+    <origin
+      xyz="0.15 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="left4" />
+    <child
+      link="left5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left6">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left6"
+    type="continuous">
+    <origin
+      xyz="0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left5" />
+    <child
+      link="left6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_F_1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left_F_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left_F_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_F_1"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0"
+      rpy="1.5708 -2.7756E-15 -1.5708" />
+    <parent
+      link="left6" />
+    <child
+      link="left_F_1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_F_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left_F_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/left_F_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_F_2"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0"
+      rpy="1.5708 2.7756E-15 1.5708" />
+    <parent
+      link="left6" />
+    <child
+      link="left_F_2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right1"
+    type="continuous">
+    <origin
+      xyz="1.2551 0.49063 0.064987"
+      rpy="-1.5708 -6.123E-17 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right2"
+    type="continuous">
+    <origin
+      xyz="0 -0.18 0.1"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="right1" />
+    <child
+      link="right2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right3"
+    type="continuous">
+    <origin
+      xyz="0.75 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right2" />
+    <child
+      link="right3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right4">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right4"
+    type="continuous">
+    <origin
+      xyz="0.55 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right3" />
+    <child
+      link="right4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right5">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right5"
+    type="continuous">
+    <origin
+      xyz="0.15 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="right4" />
+    <child
+      link="right5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right6">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right6"
+    type="continuous">
+    <origin
+      xyz="0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right5" />
+    <child
+      link="right6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_F_1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right_F_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right_F_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_F_1"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="right6" />
+    <child
+      link="right_F_1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_F_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right_F_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/burobotics/catkin_ws/src/NEXXUS_ROV/meshes/right_F_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_F_2"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0"
+      rpy="1.6501 -1.1177E-08 -1.5708" />
+    <parent
+      link="right6" />
+    <child
+      link="right_F_2" />
+    <axis
+      xyz="0 -0.99685 0.079255" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+</robot>
