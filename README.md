@@ -1,6 +1,6 @@
 # BURobotics_UWSim
 
-This repo has 4 folders that go in four seperate folders in the ROS structure. 
+This repo has 6 folders that go in six seperate folders in the ROS structure. 
 _________________________________________________________________________________
 The NEXXUS_ROV folder houses the URDF file for the ROV. It should be put in two places. The first is:
 
